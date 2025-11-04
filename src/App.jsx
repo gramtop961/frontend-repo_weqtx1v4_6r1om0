@@ -1,28 +1,32 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import About from './components/About';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+    <div className="min-h-screen scroll-smooth bg-[#0f1115] antialiased [color-scheme:dark]">
+      {/* Top nav */}
+      <header className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-6xl items-center justify-between rounded-b-2xl border border-white/10 border-t-0 bg-[#0f1115]/70 px-4 py-3 backdrop-blur-xl">
+        <a href="#home" className="font-display text-sm text-white/90">
+          MW.A — Prompt Engineer
+        </a>
+        <nav className="hidden items-center gap-6 text-sm text-white/70 sm:flex">
+          <a href="#about" className="hover:text-white">About</a>
+          <a href="#portfolio" className="hover:text-white">Portfolio</a>
+          <a href="#contact" className="hover:text-white">Contact</a>
+        </nav>
+      </header>
 
-export default App
+      <main>
+        <Hero />
+        <About />
+        <Portfolio />
+        <Contact />
+      </main>
+    </div>
+  );
+};
+
+export default App;
